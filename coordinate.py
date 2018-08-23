@@ -1,11 +1,15 @@
-print("Number of atoms ?")
-natom = input('')
+#print("Number of atoms ? ")
+#natom = input('')
 
 file = open("MolView.mol", "r")
 lines = file.readlines()
 file.close()
 
 file = open("atom_coordinate.dat", "w")
+
+atom = lines[3].split()
+#print(atom)
+natom = int(atom[0])
 
 data = []
 for i in range(4, 4+natom):
