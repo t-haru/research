@@ -15,15 +15,15 @@ data = []
 for i in range(4, 4+natom):
     data.append(lines[i])
 
-coordinates = {}
+coordinates = ["atom", "x", "y", "z"]
 for i in range(0, natom):
     temp = data[i].split()
 
-    coordinates["atom"] = "\'" + temp[3] + "\'"
-    coordinates["x"] = temp[0]
-    coordinates["y"] = temp[1]
-    coordinates["z"] = temp[2]
+    coordinates[0] = "\'" + temp[3] + "\'"
+    coordinates[1] = temp[0]
+    coordinates[2] = temp[1]
+    coordinates[3] = temp[2]
 
-    file.write(coordinates["atom"] +"\t"+ coordinates["x"] +"\t"+ coordinates["y"] +"\t"+ coordinates["z"] + "\n")
+    file.write("\'" + temp[3] + "\'" + "\t" + temp[0] + "\t" + temp[1] + "\t" + temp[2] + "\n")
 
 file.close()
